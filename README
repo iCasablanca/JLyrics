@@ -1,0 +1,7 @@
+JLyrics
+Author: Fernando Giannetti
+
+An applet that search the lyrics of a mp3 file (looking for the ID3's artist and song title) and adds this lyric into the file.
+The user can modify the lyric before insert it.
+
+At this moment, the lyrics service is http://lyricsfly.com/
