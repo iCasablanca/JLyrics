@@ -5,3 +5,8 @@ An applet that search the lyrics of a mp3 file (looking for the ID3's artist and
 The user can modify the lyric before insert it.
 
 At this moment, the lyrics service is http://lyricsfly.com/
+
+Structure:
+
+/dist : libraries dir
+/src : all the sources
