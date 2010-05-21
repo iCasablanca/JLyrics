@@ -2,16 +2,16 @@ package jlyrics;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.Iterator;
 
 import jlyrics.exceptions.JLyricsException;
 
 import org.farng.mp3.MP3File;
 import org.farng.mp3.TagException;
 import org.farng.mp3.id3.AbstractID3;
-import org.farng.mp3.id3.AbstractID3v1;
-import org.farng.mp3.id3.AbstractID3v2;
-import org.farng.mp3.lyrics3.Lyrics3v2;
-import org.farng.mp3.lyrics3.Lyrics3v2Field;
+import org.farng.mp3.id3.AbstractID3v2Frame;
+import org.farng.mp3.id3.FrameBodyUSLT;
 
 /**
  * Do all the manages of the lyrics and the file
@@ -49,7 +49,15 @@ public class LyricsManager {
 	}
 	
 	private String getLyrics(MP3File mp3File) throws IOException, TagException{
-		no me gusta, no recupero la letra que ya tiene el archivo, ni tampoco puedo guardarla
-		return "";
+//		Lyrics3v2 tag= new Lyrics3v2();
+//		tag.setSongLyric("HOLAAA");
+//		mp3File.setLyrics3Tag(tag);
+//		mp3File.save();
+		Iterator i=mp3File.getID3v2Tag().getFrameIterator();
+		while(i.hasNext()){
+			 AbstractID3v2Frame  o=(AbstractID3v2Frame)i.next();
+			System.out.println(o.getIdentifier()); //USLT
+		}
+		return t.getLyric();
 	}
 }
